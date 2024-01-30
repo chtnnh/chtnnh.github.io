@@ -202,6 +202,15 @@ main {
 @media screen and (min-width: 768px) {
     .buttons.for-back-home:not(:last-child) {
     }
+
+    .a-past {
+        display: grid;
+        grid-template-columns: 35% 5% 60%;
+    }
+
+    .life {
+        text-align: right;
+    }
 }
 
 /* 05. Text Styles */
