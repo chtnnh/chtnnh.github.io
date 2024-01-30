@@ -1,0 +1,192 @@
+---
+---
+
+<!-------------------------------------------------------------------------------------
+*
+* MIT License
+* Copyright (c) 2020 Raghuveer S, Hiran Venugopalan, Asim K T
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+------------------------------------------------------------------------------------>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Chaitanya Mittal" property="og:site_name" />
+    <meta
+        content="Software Engineer | Computer Science"
+        property="og:description">
+    <meta content="{{ site.url }}/about/" property="article:author">
+    <meta property="og:image" content="../assets/img/OGImg.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    {%- if page.title -%}
+    <meta content="{{ page.title }}" property="og:title">
+    <meta content="article" property="og:type">
+    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    {%- else -%}
+    <meta content="website" property="og:type">
+    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    {%- endif -%}
+
+    <title>{{page.title}} - {{site.heading}}</title>
+    <link rel="canonical" href="{{site.url}}{{page.url}}" />
+    <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/img/profile.png">
+    <link rel="icon" href="{{ site.baseurl }}/assets/img/favicon.png" type="image/png" sizes="16x16" />
+    <link href="{{ site.baseurl }}/assets/css/style.css" rel="stylesheet" media="all" class="default" />
+    <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet" media="all" class="default" />
+    <link href="{{ site.baseurl }}/assets/css/Util.css" rel="stylesheet" media="all" class="default" />
+    <link href="{{ site.baseurl }}/assets/css/vendor/Katex.css" rel="stylesheet" media="all" class="default" />
+    <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
+    <script type="text/javascript">
+    (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+    for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+    mixpanel.init('bf31f22094ae20aee447d7b5a459c622', { debug: true, track_pageview: true, persistence: 'localStorage' });
+    mixpanel.identify()
+    mixpanel.track('Visit', {
+        "url": window.URL.toString()
+    })
+    </script>
+</head>
+
+<body>
+    <main>
+    {%- include Nav.html -%}
+    <section class="section">
+        <div class="columns is-centered">
+
+            <!-- Homepage Layout-->
+            {%- if page.permalink == "/" -%}
+            <div class="column is-8-widescreen  is-8-desktop is-8-tablet is-12-mobile">
+                    {%- if site.preferences.homepage.enabled -%}
+                            <!--- Show Homepage -->
+                            {%- include Homepage.html -%}
+                    {%- else -%}
+                            <!--- Show Feed Part -->
+                <div class="column is-6-widescreen  is-8-desktop is-8-tablet is-12-mobile">
+                            <h5 class="meta-title"><a href="/">← Home</a></h5>
+                            <div class="jumbo">{{page.title}}</div>
+                            {%- include Content.html -%}
+                            {%- include Feed.html -%}
+                </div>
+                    {%- endif -%}
+            </div>
+            {%- endif -%}
+
+            <!--- Notes Feed Layout-->
+            {%- if page.feedformat -%}
+            <div class="column is-6-widescreen  is-8-desktop is-8-tablet is-12-mobile">
+                <h5 class="meta-title"><a href="/">← Home</a></h5>
+                    <div class="jumbo">{{page.title}}</div>
+                    {%- include Content.html -%}
+                    {%- include Feed.html -%}
+            {%- endif -%}
+
+            <!--- Notes Layout-->
+            {%- if page.content-type == "notes" -%}
+            <div class="column is-5-widescreen  is-6-desktop is-8-tablet is-12-mobile">
+                    <div class="note-page-section">
+                        <div>
+                            {%- if site.preferences.homepage.enabled -%}
+                            <a onclick="window.history.back();">
+                            {%- else -%}
+                            <a onclick="window.location.assign('/');">
+                            {%- endif -%}
+                                    <h5 class="meta-title">← BACK</h5>
+                            </a>
+                        </div>
+                    <!--- List type Note Layout-->
+                    {%- if page.format == "list" -%}
+                    <style>
+                        li {border-bottom: 1px solid var(--color-border-light); list-style: none; padding: 0.4rem 0 0.4rem 0;}
+                        .content ul { padding-left: 0px;}
+                        h3 {padding-top: 1rem; padding-bottom: 0rem;}
+                    </style>                    
+                    {%- endif -%}
+                    <h1>{{page.title}}</h1>
+                    {%- include Content.html -%}
+                    {%- include Backlinks.html -%}
+                    </div>
+            </div>
+            {%- endif -%}
+
+
+            <!--- Post Feed Layout-->
+            {%- if page.permalink == "/posts" -%}
+            <div class="column is-6-widescreen  is-8-desktop is-8-tablet is-12-mobile">
+                <h5 class="meta-title"><a href="/">← Home</a></h5>
+                <div class="jumbo">{{page.title}}</div>
+                    {%- include Content.html -%}
+                    {% for post in site.posts %}
+                        <div class="list-feed">
+                            <a href="{{ site.baseurl }}{{post.url}}" style="text-decoration: none;display: flex;justify-content: space-between;flex-direction: row;width: 100%;">
+                                <div class="writinglist-title">{{post.title }}</div>
+                            </a>
+                            <span>{{post.date | date: "%d/%m/%Y" }}</span>
+                        </div>
+                    {%- endfor -%}
+            </div> 
+
+            <ul>
+                
+            {%- endif -%}
+
+             <!--- Post Layout-->
+             {%- if page.content-type == "post"  -%}
+             <div class="column is-5-widescreen  is-6-desktop is-8-tablet is-12-mobile">
+                     <div class="note-page-section">
+                         <div>
+                             {%- if site.preferences.homepage.enabled -%}
+                             <a onclick="window.history.back();">
+                             {%- else -%}
+                             <a onclick="window.location.assign('/');">
+                             {%- endif -%}
+                                     <h5 class="meta-title">← BACK</h5>
+                             </a>
+                         </div>
+                     <h1>{{page.title}}</h1>
+                     <h6>{{ page.date | date: "%a, %b %d, %Y" }} | {{ content | reading_time_as_i }}</h6>
+                     <br />
+                     {%- include Content.html -%}
+                     {%- include Backlinks.html -%}
+                     </div>
+             </div>
+             {%- endif -%}
+
+            <!--- Static Page Layout-->
+            {%- if page.content-type == "static" -%}
+            <div class="column is-5-widescreen  is-6-desktop is-8-tablet is-12-mobile">
+                        <div class="jumbo">{{page.title}}</div>                        
+                        {%- include Content.html -%}
+                </div>
+            {%- endif -%}
+        </div>
+    </section>   
+    {%- include Footer.html -%}             
+</main>
+<script>
+    initTheme();
+</script>
+</body>
+</html>
