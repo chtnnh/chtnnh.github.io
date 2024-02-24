@@ -1576,6 +1576,10 @@ a[href^="http"] {
     padding: 5% 10%;
 }
 
+#yt-embed {
+    margin-top: 60px;
+}
+
 @media screen and (max-width: 320px) {
     .home-intro {
         padding: 0;
