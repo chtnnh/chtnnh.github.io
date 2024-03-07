@@ -23,7 +23,9 @@
     <link rel="canonical" href="{{site.url}}{{page.url}}" />
     <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/img/profile.png">
     <link rel="icon" href="{{ site.baseurl }}/assets/img/favicon.png" type="image/png" sizes="16x16" />
+    {%- if page.permalink != "reclaim-dev-rel" -%}
     <link href="{{ site.baseurl }}/assets/css/style.css" rel="stylesheet" media="all" class="default" />
+    {%- endif -%}
     <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet" media="all" class="default" />
     <link href="{{ site.baseurl }}/assets/css/Util.css" rel="stylesheet" media="all" class="default" />
     <link href="{{ site.baseurl }}/assets/css/vendor/Katex.css" rel="stylesheet" media="all" class="default" />
