@@ -1592,4 +1592,5 @@ a[href^="http"] {
 
 .idea {
     color: gray;
+    display: none;
 }
