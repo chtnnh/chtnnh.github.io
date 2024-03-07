@@ -49,7 +49,9 @@
 
 <body>
     <main>
+        {%- if page.permalink != "/reclaim-dev-rel" -%}
         {%- include Nav.html -%}
+        {%- endif -%}
         <section class="section">
             <div class="columns is-centered">
 
@@ -361,7 +363,9 @@
                         {%- endif -%}
                 </div>
         </section>
+        {%- if page.permalink != "/reclaim-dev-rel" -%}
         {%- include Footer.html -%}
+        {%- endif -%}
     </main>
     <script>
         initTheme();
