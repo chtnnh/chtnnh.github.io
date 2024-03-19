@@ -14,12 +14,20 @@ function changeIconImgSrc(src) {
   document.getElementById("theme-toggle-img--mobile").src = src;
 }
 
+function hamburgerClassChanger() {
+  // toggles hamburger class
+  document.querySelectorAll(".navbar-burger").forEach((el) => {
+    el.classList.toggle("dark-mode")
+  });
+}
+
 /**
  * Sets the theme as dark, regardless of browser preferences
  */
 function setDarkTheme() {
   document.documentElement.setAttribute("data-theme", "dark");
   localStorage.setItem("theme", "dark");
+  hamburgerClassChanger();
   changeIconImgSrc(iconMoon);
 }
 
@@ -28,8 +36,8 @@ function setDarkTheme() {
  */
 function setLightTheme() {
   document.documentElement.setAttribute("data-theme", "light");
-  localStorage.setItem("theme", "light");
-  changeIconImgSrc(iconSun);
+  hamburgerClassChanger();
+  localStorage.setItem("theme", "light");  changeIconImgSrc(iconSun);
 }
 
 function modeSwitcher() {
