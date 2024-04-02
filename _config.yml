@@ -19,7 +19,7 @@
 # in the templates via {{ site.myvariable }}.
 
 # URL is the base hostname with protocol for your site, eg http://example.com
-url: "https://chtnnh.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.chtnnh.site" # the base hostname & protocol for your site, e.g. http://example.com
 
 # If you want to install this jekyll in a subpath (eg /digitalgarden) set it here.
 # Else keep it Empty (DON'T PUT /; Keep it empty)
@@ -112,6 +112,7 @@ exclude:
   - _notes/000 Inbox
   - _notes/200 Private
   - _notes/300 Templates
+  - _notes/Public/lifesWork
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
@@ -122,3 +123,7 @@ exclude:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+include:
+  - _notes/Public/lifesWork/yearPlans
+

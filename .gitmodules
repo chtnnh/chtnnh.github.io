@@ -1,0 +1,3 @@
+[submodule "lifesWork"]
+	path = lifesWork
+	url = git@github.com:chtnnh/lifesWork
