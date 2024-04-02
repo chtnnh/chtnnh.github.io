@@ -112,17 +112,21 @@ exclude:
   - _notes/000 Inbox
   - _notes/200 Private
   - _notes/300 Templates
-  - _notes/Public/lifesWork
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+  - _notes/.obsidian
+  - _notes/Public/lifesWork/.git
+  - _notes/Public/lifesWork/.obsidian
+  - _notes/Public/lifesWork/templates
+  - _notes/Public/lifesWork/yearPlans/year0/logs
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
 
 include:
   - _notes/Public/lifesWork/yearPlans
