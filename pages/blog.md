@@ -18,4 +18,4 @@ content-type: static
       {% endif %}
     </li>
   {% endfor %}
-</ul> 
+</ul>
